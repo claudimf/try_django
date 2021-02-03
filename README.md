@@ -4,6 +4,26 @@
 
 # Projeto 'Try Django' do curso ['Python Django Web Framework - Full Course for Beginners'](https://www.youtube.com/watch?v=F5mRW0jo-U4):
 
+## Sobre o curso:
+
+O curso tem um guia básico que cobre as principais funcionalidades do Django Framework que você poderá acompanhar na lista abaixo chamada ['aulas do curso'](https://github.com/claudimf/try_django#aulas-do-curso), porém há alguns pontos de atenção:
+
+1. Para facilitar o desenvolvimento utilizaremos Docker na aplicação e caso haja dúvida de como foi feito isso você pode acessar nas referências o link ['1° Criar projeto Django com banco Postgres'](https://github.com/claudimf/django-docker).
+
+2. O banco padrão do Django até a versão corrente do curso é o Sqlite3, porém utilizo o Postgres nesse artigo. Arquivos alterados para essa configuração:
+    * [settings](https://github.com/claudimf/try_django/blob/main/try_django/settings.py)
+    * [docker-compose.yml](https://github.com/claudimf/try_django/blob/main/docker-compose.yml)
+
+3. Para acesso ao banco com ferramentas como o [DBeaver](https://dbeaver.com/docs/wiki/Connect-to-Database/) os dados necessários a conexão você encontrará no [docker-compose.yml](https://github.com/claudimf/try_django/blob/main/docker-compose.yml) e a porta 5433 foi externalizada que são:
+    * Host: localhost
+    * Port: 5433
+    * Database: postgres
+    * User: postgres
+
+4. No [docker-compose.yml](https://github.com/claudimf/try_django/blob/main/docker-compose.yml) o volume do banco foi externalizado para se preservar os dados imputados caso seja derrubado o container.
+
+5. No [docker-compose.yml](https://github.com/claudimf/try_django/blob/main/docker-compose.yml) o volume da aplicação foi mapeado para que as alterações sejam identificadas no momento em que se subir o projeto.
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
@@ -105,3 +125,6 @@ docker-compose down && docker-compose up
 [1° Criar projeto Django com banco Postgres](https://github.com/claudimf/django-docker)
 
 [2° 'Try Django' do curso 'Python Django Web Framework - Full Course for Beginners'](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+
+[3° 'Try Django' project sample - Full Course for Beginners'](https://github.com/codingforentrepreneurs/Try-Django)
+
