@@ -24,6 +24,26 @@ O curso tem um guia básico que cobre as principais funcionalidades do Django Fr
 
 5. No [docker-compose.yml](https://github.com/claudimf/try_django/blob/main/docker-compose.yml) o volume da aplicação foi mapeado para que as alterações sejam identificadas no momento em que se subir o projeto.
 
+## Sobre o projeto:
+
+### Criar migrações no seu banco de dados:
+
+```sh
+docker-compose exec web python manage.py makemigrations
+```
+
+### Aplicar migrações no seu banco de dados:
+
+```sh
+docker-compose exec web python manage.py migrate
+```
+
+### Criar um 'Super User' para acessso no [admin 'http://localhost:8000/admin'](http://localhost:8000/admin):
+
+```sh
+docker-compose exec web python manage.py createsuperuser
+```
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
