@@ -1,68 +1,9 @@
-# 'Try Django'
+# Try Django
 
 👋 Olá, Seja Bem-vindo(a) ao 'Try Django'.
 
-# Como criar o projeto:
+# Projeto 'Try Django' do curso ['Python Django Web Framework - Full Course for Beginners'](https://www.youtube.com/watch?v=F5mRW0jo-U4):
 
-- 1° Criar arquivo Dockerfile com o seguinte conteúdo:
-    ```sh
-    FROM python:3
-    ENV PYTHONUNBUFFERED 1
-    RUN mkdir /code
-    WORKDIR /code
-    ADD requirements.txt /code/
-    RUN pip install -r requirements.txt
-    ADD . /code/
-    ```
-- 2° Criar o arquivo docker-compose.yml com o conteúdo abaixo:
-    ```sh
-    version: "3.3"
-   
-    services:
-    db:
-        image: postgres
-        environment:
-        - POSTGRES_DB=postgres
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-    web:
-        build: .
-        command: python manage.py runserver 0.0.0.0:8000
-        volumes:
-        - .:/code
-        ports:
-        - "8000:8000"
-        depends_on:
-        - db
-    ```
-- 3° Depois de criado os arquivos, construa sua aplicação com o Docker com o seguinte comando no terminal:
-    ```sh
-    sudo docker-compose run web django-admin.py startproject test .
-    ```
-- 4° Usando o Linux o projeto construido via Docker fica atrelado ao usuário raiz, para mudar o usuário execute o seguinte comando no terminal:
-    ```sh
-    sudo chown -R $USER:$USER .
-    ```
-- 5° Para conectar a database substitua o trecho "DATABASES = ..." do arquivo "test/settings.py" para:
-    ```sh
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'HOST': 'db',
-            'PORT': 5432,
-        }
-    }
-    ```
-- 6° Construa a aplicação:
-    ```sh
-    docker-compose build
-    ```
-- 7° Suba a aplicação:
-    ```sh
-    docker-compose up
-    ```
 
 # Exigências
 
@@ -112,4 +53,6 @@ docker-compose down && docker-compose up
 
 # Referências utilizadas
 
-[1° Criar docker-compose para Django com banco Postgres](https://docs.docker.com/compose/django/#define-the-project-components/)  
+[1° Criar projeto Django com banco Postgres](https://github.com/claudimf/django-docker)
+
+[2° 'Try Django' do curso 'Python Django Web Framework - Full Course for Beginners'](https://www.youtube.com/watch?v=F5mRW0jo-U4)
