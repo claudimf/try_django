@@ -44,6 +44,26 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 ```
 
+### Utilizar o ['shell_plus'](https://django-extensions.readthedocs.io/en/latest/shell_plus.html) ao invés do shell:
+1. no arquivo [settings.py](https://github.com/claudimf/try_django/blob/main/try_django/settings.py) adicione o app 'django_extensions' no dicionário 'INSTALLED_APPS'.
+2. no arquivo [Dockerfile](https://github.com/claudimf/try_django/blob/main/Dockerfile) adicione a seguite linha:
+
+    ```sh
+    RUN pip install django-extensions
+    ```
+3. Reconstrua sua aplicação:
+    ```sh
+    docker-compose build
+    ```
+4. Para acessar o terminal interativo basta acessar o a bash do seu contâiner:
+     ```sh
+    docker-compose run --rm web bash
+    ```
+5. Por fim acessar o terminal com a opção '--print-sql' para imprimir as queries solicitadas pelo usuário:
+     ```sh
+    python manage.py shell_plus --print-sql
+    ```
+
 ## Notas sobre as aulas:
 
 - [(0:33:57​) 8 - Your First App Component](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=2037s)
@@ -64,7 +84,7 @@ docker-compose exec web python manage.py createsuperuser
     ```sh
     docker-compose exec web python manage.py migrate
     ```
-    
+
     * Reiniciar a aplicação web:
 
     ```sh
@@ -72,6 +92,9 @@ docker-compose exec web python manage.py createsuperuser
     ```
 
     * Acessar no seu browser a rota [http://localhost:8000/admin/products/](http://localhost:8000/admin/products/)
+
+- [(0:42:34​) 9 - Create Product Objects in the Python Shell](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=2554s)
+    * Utilizar o shell(console interativo) para utilizar o ORM do Django.
 
 ## Aulas do curso:
 
