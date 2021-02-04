@@ -55,6 +55,23 @@ docker-compose exec web python manage.py createsuperuser
     ```sh
     python manage.py startapp products
     ```
+    * Criar no arquivo ['.products/models.py'](https://github.com/claudimf/try_django/blob/main/products/models.py) a classe Product e os atributos.
+
+    * Gerar e aplicar as migrações no seu terminal.
+    ```sh
+    docker-compose exec web python manage.py makemigrations
+    ```
+    ```sh
+    docker-compose exec web python manage.py migrate
+    ```
+    
+    * Reiniciar a aplicação web:
+
+    ```sh
+    docker-compose down && docker-compose up web
+    ```
+
+    * Acessar no seu browser a rota [http://localhost:8000/admin/products/](http://localhost:8000/admin/products/)
 
 ## Aulas do curso:
 
