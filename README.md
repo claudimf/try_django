@@ -148,6 +148,11 @@ docker-compose exec web python manage.py createsuperuser
     ```sh
     Product.objects.create(title='Novo produto 2',  price=1.99, summary='qualquer coisa')
     ```
+- [(0:59:27​) 12 - Default Homepage to Custom Homepage](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=3567s)
+    * Criar um app chamado 'pages':
+    ```sh
+    python manage.py startapp pages
+    ```
 
 ## Aulas do curso:
 
