@@ -153,6 +153,17 @@ docker-compose exec web python manage.py createsuperuser
     ```sh
     python manage.py startapp pages
     ```
+    * Crie a views no arquivo [pages/views.py](https://github.com/claudimf/try_django/blob/main/pages/views.py) com o seguinte conteúdo:
+    ```sh
+    from django.http import HttpResponse
+    from django.shortcuts import render
+
+
+    # Create your views here.
+    def home_view(*args, **kwargs):
+        return HttpResponse("<h1>Hello World<h1>")
+    ```
+    * Adiciona essa rota no arquivo [settings.py](https://github.com/claudimf/try_django/blob/main/try_django/settings.py)
 
 ## Aulas do curso:
 
