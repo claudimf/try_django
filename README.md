@@ -44,6 +44,18 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 ```
 
+## Notas sobre as aulas:
+
+- [(0:33:57​) 8 - Your First App Component](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=2037s)
+    * Criar um app chamado 'Products', para isso entre na bash via o seu terminal:
+    ```sh
+    docker-compose run --rm web bash
+    ```
+    * Depois crie o app:
+    ```sh
+    python manage.py startapp products
+    ```
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
