@@ -26,6 +26,14 @@ O curso tem um guia básico que cobre as principais funcionalidades do Django Fr
 
 ## Sobre o projeto:
 
+### Permissões de arquivos:
+
+Ao se criar migrações, adicionar libs ou qualquer outro comando que crie arquivos dentro do contâiner Docker o proprietário para edição se torna o contâiner, sendo assim você precisará rodar o comando abaixo para alterar essas permissões e você poder editar:
+
+```sh
+sudo chown -R $USER:$USER .
+```
+
 ### Criar migrações no seu banco de dados:
 
 ```sh
@@ -76,6 +84,13 @@ docker-compose exec web python manage.py createsuperuser
     python manage.py startapp products
     ```
     * Criar no arquivo ['.products/models.py'](https://github.com/claudimf/try_django/blob/main/products/models.py) a classe Product e os atributos.
+    ```sh
+    class Product(models.Model):
+        title = models.TextField()
+        description = models.TextField()
+        price = models.TextField()
+        summary = models.TextField(default='isto é bacana!')
+    ```
 
     * Gerar e aplicar as migrações no seu terminal.
     ```sh
@@ -94,7 +109,45 @@ docker-compose exec web python manage.py createsuperuser
     * Acessar no seu browser a rota [http://localhost:8000/admin/products/](http://localhost:8000/admin/products/)
 
 - [(0:42:34​) 9 - Create Product Objects in the Python Shell](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=2554s)
-    * Utilizar o shell(console interativo) para utilizar o ORM do Django.
+    * Utilizar o shell_plus(console interativo) para utilizar o ORM do Django.
+    * Cadastrar produtos:
+    ```sh
+    Product.objects.create(title='Novo produto 2', description='outro', price='1234', summary='qualquer coisa')
+    ```
+- [(0:46:18​) 10 - New Model Fields](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=2778s) 
+    * Dropar seu banco, vá em seu terminal:
+    ```sh
+    docker-compose up -d db
+    ```
+    * liste o container do banco que estará de pé:
+    ```sh
+    docker ps
+    ```
+    * Entre no contâiner:
+    ```sh
+    docker exec -it [nome do db] bash
+    ```
+    * [dentro do container] - Entrar no banco e derrube o banco:
+    ```sh
+    drop database postgres;
+    ```
+    * [dentro do container] - Crie um novo banco:
+    ```sh
+    create database postgres;
+    ```
+    * Na model Product atualize o conteúdo para:
+    ```sh
+    class Product(models.Model):
+        title = models.CharField(max_length=120)
+        description = models.TextField(blank=True, null=True)
+        price = models.DecimalField(max_digits=1000, decimal_places=2)
+        summary = models.TextField()
+    ```
+    * Delete as migrações existentes e o pycache dos produtos e crie novamente as migrações e aplique.
+    * Você poderá criar os produtos novamentes via terminal como no exemplo abaixo:
+    ```sh
+    Product.objects.create(title='Novo produto 2',  price=1.99, summary='qualquer coisa')
+    ```
 
 ## Aulas do curso:
 
@@ -199,4 +252,6 @@ docker-compose down && docker-compose up
 [2° 'Try Django' do curso 'Python Django Web Framework - Full Course for Beginners'](https://www.youtube.com/watch?v=F5mRW0jo-U4)
 
 [3° 'Try Django' project sample - Full Course for Beginners'](https://github.com/codingforentrepreneurs/Try-Django)
+
+[4° Django Models Fields types](https://docs.djangoproject.com/en/3.1/ref/models/fields/)
 
