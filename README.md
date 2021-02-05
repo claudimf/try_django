@@ -183,6 +183,8 @@ docker-compose exec web python manage.py createsuperuser
 - [(1:42:17​) 20 - Template Tags and Filters](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=6137s)
     * Criar [template que traz os detalhes do produto](https://github.com/claudimf/try_django/blob/main/templates/products/detail.html)
 
+- [(2:06:50​) 23 - Django Model Forms](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=7610s)
+    * Criar [um formulário para cadastrar produtos](https://github.com/claudimf/try_django/blob/main/products/forms.py)
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
