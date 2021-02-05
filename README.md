@@ -177,6 +177,9 @@ docker-compose exec web python manage.py createsuperuser
 - [(1:16:50​) 15 - Django Templating Engine Basics](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=4610s)
     * Criar um template [base](https://github.com/claudimf/try_django/blob/main/templates/base.html) para ser compartilhado com os demais.
 
+- [(1:24:00​) 16 - Include Template Tag](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5040s)
+    * Incluir uma [navba](https://github.com/claudimf/try_django/blob/main/templates/navbar.html)
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
