@@ -165,6 +165,16 @@ docker-compose exec web python manage.py createsuperuser
     ```
     * Adiciona essa rota no arquivo [settings.py](https://github.com/claudimf/try_django/blob/main/try_django/settings.py)
 
+- [(1:10:23​) 14 - Django Templates](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=4223s)
+    * Criando os templates no diretório [templates](https://github.com/claudimf/try_django/tree/main/templates)
+    * Configura o path dos templates no arquivo [settings.py](https://github.com/claudimf/try_django/blob/main/try_django/settings.py):
+    ```sh
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, "templates")],
+    ```
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
