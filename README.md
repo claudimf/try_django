@@ -174,6 +174,8 @@ docker-compose exec web python manage.py createsuperuser
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': [os.path.join(BASE_DIR, "templates")],
     ```
+- [(1:16:50​) 15 - Django Templating Engine Basics](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=4610s)
+    * Criar um template [base](https://github.com/claudimf/try_django/blob/main/templates/base.html) para ser compartilhado com os demais.
 
 ## Aulas do curso:
 
