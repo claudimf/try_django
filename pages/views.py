@@ -10,3 +10,12 @@ def home_view(request, *args, **kwargs):
 def contact_view(request, *args, **kwargs):
     print(request.user)
     return HttpResponse("<h1>Contact Page<h1>")
+
+def about_view(request, *args, **kwargs):
+    print(request.user)
+    return HttpResponse("<h1>About Page<h1>")
+
+def social_view(request, *args, **kwargs):
+    print(request.user)
+    return HttpResponse("<h1>Social Page<h1>")
+
