@@ -8,17 +8,17 @@ def home_view(request, *args, **kwargs):
 
 
 def contact_view(request, *args, **kwargs):
-    print(request.user)
     return render(request, "contact.html", {})
 
 
 def about_view(request, *args, **kwargs):
-    print(request.user)
-    return render(request, "about.html", {})
+    my_context = {
+        "my_text": "This is about us",
+        "my_number": 123,
+        "my_list": [123, 456, 789]
+    }
+    return render(request, "about.html", my_context)
 
 
 def social_view(request, *args, **kwargs):
-    print(request.user)
     return render(request, "social.html", {})
-
-
