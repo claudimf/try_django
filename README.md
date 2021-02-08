@@ -293,3 +293,5 @@ docker-compose down && docker-compose up
 
 [5° Built-in template tags and filters](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/)
 
+[6° Form fields tyoe in Django](https://docs.djangoproject.com/en/3.1/ref/forms/fields/)
+
