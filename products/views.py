@@ -97,3 +97,11 @@ def product_delete_view(request, id):
         'object': obj
     }
     return render(request, "products/product_delete.html", context)
+
+
+def product_list_view(request):
+    query_set = Product.objects.all()
+    context = {
+        'object_list': query_set
+    }
+    return render(request, "products/product_list.html", context)
