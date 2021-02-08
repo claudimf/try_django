@@ -1,6 +1,4 @@
 from django import forms
-
-
 from .models import Product
 
 
@@ -13,7 +11,7 @@ class ProductForm(forms.ModelForm):
                             )
     # email = forms.EmailField()
     description = forms.CharField(
-                        required=False, 
+                        required=False,
                         widget=forms.Textarea(
                                 attrs={
                                     "placeholder": "your description",
@@ -57,7 +55,7 @@ class RawProductForm(forms.Form):
                                 )
                             )
     description = forms.CharField(
-                        required=False, 
+                        required=False,
                         widget=forms.Textarea(
                                 attrs={
                                     "placeholder": "your description",
@@ -69,4 +67,3 @@ class RawProductForm(forms.Form):
                             )
                         )
     price = forms.DecimalField(initial=199.99)
-

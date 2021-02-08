@@ -295,3 +295,4 @@ docker-compose down && docker-compose up
 
 [6° Form fields tyoe in Django](https://docs.djangoproject.com/en/3.1/ref/forms/fields/)
 
+[7º 10 reasons to try django for client projects](https://www.freecodecamp.org/news/10-reasons-to-try-django-for-client-projects/)

@@ -70,3 +70,11 @@ def render_initial_data(request):
         'form': form
     }
     return render(request, "products/product_create.html", context)
+
+
+def dynamic_lookup_view(request, my_id):
+    obj = Product.objects.get(id=my_id)
+    context = {
+        'object': obj
+    }
+    return render(request, "products/product_detail.html", context)
