@@ -185,6 +185,14 @@ docker-compose exec web python manage.py createsuperuser
 
 - [(2:06:50​) 23 - Django Model Forms](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=7610s)
     * Criar [um formulário para cadastrar produtos](https://github.com/claudimf/try_django/blob/main/products/forms.py)
+
+- [(3:07:35​) 36 - Class Based Views - ListView](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=11255s)
+    * Crie o app 'Blog':
+    ```sh
+    python manage.py startapp blog
+    ```
+    * Adicione o app no arquivo [settings.py](https://github.com/claudimf/try_django/blob/main/try_django/settings.py) e no arquivo [try_django/urls.py](https://github.com/claudimf/try_django/blob/main/try_django/urls.py).
+
 ## Aulas do curso:
 
 - [(0:00:00​) 1 - Welcome ](https://www.youtube.com/watch?v=F5mRW0jo-U4&t=0s)
