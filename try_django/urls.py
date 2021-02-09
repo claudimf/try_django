@@ -34,8 +34,8 @@ urlpatterns = [
     path('about/', about_view),
     path('create/', product_create_view),
     path('create_with_initial_data/', render_initial_data),
-    path('product/', product_detail_view),
-    path('products/<int:my_id>/', dynamic_lookup_view, name='product'),
+    path('product/', product_detail_view, name='product'),
+    path('products/<int:my_id>/', dynamic_lookup_view, name='product-detail'),
     path('products/<int:id>/delete/', product_delete_view, name='product-delete'),
     path('products/', product_list_view, name='product-list')
 ]
