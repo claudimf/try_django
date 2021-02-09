@@ -12,4 +12,4 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         # return f"/products/{self.id}/" #old way
-        return reverse("product-detail", kwargs={"my_id": self.id})
+        return reverse("products:product-detail", kwargs={"my_id": self.id})
