@@ -3,7 +3,8 @@ from .models import Article
 from django.views.generic import (
     DetailView,
     ListView,
-    CreateView
+    CreateView,
+    UpdateView
 )
 from .forms import ArticleModelForm
 
@@ -29,6 +30,25 @@ class ArticleCreateView(CreateView):
     queryset = Article.objects.all()
     # 'success_url = '/''
 
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+    # def get_success_url(self):
+    #    return '/'
+
+
+class ArticleUpdateView(UpdateView):
+    template_name = 'articles/article_create.html'
+    form_class = ArticleModelForm
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article, id=id_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
 
 # # Old way
 # def article_detail_view(request, id):
