@@ -1,4 +1,14 @@
 from django.shortcuts import render
+from django.views import View
+
+
+# BASE VIEW Class = VIEW
+class CourseView(View):
+    template_name = 'about.html'
+
+    def get(self, request, *args, **kwargs):
+        # GET method
+        return render(request, self.template_name, {})
 
 
 # HTTP METHODS
