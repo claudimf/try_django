@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from .models import Article
 from django.views.generic import (
     DetailView,
     ListView,
     CreateView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 from .forms import ArticleModelForm
 
@@ -49,6 +51,17 @@ class ArticleUpdateView(UpdateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
+
+class ArticleDeleteView(DeleteView):
+    template_name = 'articles/article_delete.html'
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article, id=id_)
+
+    def get_success_url(self):
+        return reverse('articles:article-list')
 
 # # Old way
 # def article_detail_view(request, id):
